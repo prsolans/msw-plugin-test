@@ -6,8 +6,8 @@
   <Version>1.0</Version>
   <ProviderName>Microsoft</ProviderName>
   <DefaultLocale>EN-US</DefaultLocale>
-  <DisplayName DefaultValue="Hello World add-in"/>
-  <Description DefaultValue="My first app."/>
+  <DisplayName DefaultValue="Test application"/>
+  <Description DefaultValue="Reading in text from Word doc"/>
   <IconUrl DefaultValue=
     "http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg"/>
 
@@ -17,7 +17,7 @@
   </Hosts>
 
   <DefaultSettings>
-    <SourceLocation DefaultValue="\\MyShare\MyManifests\HelloWorld\HelloWorld.html"/>
+    <SourceLocation DefaultValue="http://50.16.205.23/msw-plugin-test/Helloworld.html"/>
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
 </OfficeApp>

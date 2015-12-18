@@ -6,17 +6,6 @@ Office.initialize = function(reason) {
         // Add any initialization logic to this function.
     });
 }
-var MyArray = [
-    ['Berlin'],
-    ['Munich'],
-    ['Duisburg']
-];
-
-function writeData() {
-    Office.context.document.setSelectedDataAsync(MyArray, {
-        coercionType: 'matrix'
-    });
-}
 
 function ReadData() {
     Office.context.document.getSelectedDataAsync(Office.CoercionType.Text, function(result) {
