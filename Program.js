@@ -45,12 +45,14 @@ function readContentControl() {
             return context.sync().then(function() {
                 if (contentControlsWithTag.items.length === 0) {
                     console.log('No content control found.');
+                                        printData("no content control found");
+
                 } else {
                     // Queue a command to get the HTML contents of the first content control.
                     var html = contentControlsWithTag.items[0].getHtml();
 
                     printData(html);
-                    
+
                     // Synchronize the document state by executing the queued commands, 
                     // and return a promise to indicate task completion.
                     return context.sync()
@@ -62,6 +64,8 @@ function readContentControl() {
         })
         .catch(function(error) {
             console.log('Error: ' + JSON.stringify(error));
+                                printData(error);
+
             if (error instanceof OfficeExtension.Error) {
                 console.log('Debug info: ' + JSON.stringify(error.debugInfo));
             }
