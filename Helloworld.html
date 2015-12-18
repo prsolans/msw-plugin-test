@@ -16,6 +16,17 @@
     <h2 id="message">...</h2>
 </body>
 <script type="text/javascript">
+
+function getSelectionText() {
+    var text = "";
+    if (window.getSelection) {
+        text = window.getSelection().toString();
+    } else if (document.selection && document.selection.type != "Control") {
+        text = document.selection.createRange().text;
+    }
+    return text;
+}
+
 (function() {
     "use strict";
 
@@ -24,8 +35,10 @@
         $(document).ready(function() {
 
             $('#get_text').on('click', function() {
+            	console.log('0');
+            	getSelectionText();
                 console.log('1');
-                getText();
+                //getText();
                 console.log('3');
             });
 
