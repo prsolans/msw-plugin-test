@@ -18,16 +18,26 @@
 $(function() {
 
     $('#get_text').on('click', function() {
-        Office.context.document.getSelectedDataAsync(Office.CoercionType.Text, function(asyncResult) {
-            if (asyncResult.status == Office.AsyncResultStatus.Failed) {
-                write('Action failed. Error: ' + asyncResult.error.message);
-            } else {
-                write('Selected data: ' + asyncResult.value);
-            }
-        });
+        getText();
     });
 
 
+    function getText() {
+        Office.context.document.getSelectedDataAsync(Office.CoercionType.Text, {
+                valueFormat: "unformatted",
+                filterType: "all"
+            },
+            function(asyncResult) {
+                var error = asyncResult.error;
+                if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+                    write(error.name + ": " + error.message);
+                } else {
+                    // Get selected data.
+                    var dataValue = asyncResult.value;
+                    write('Selected data is ' + dataValue);
+                }
+            });
+    }
 
     // Function that writes to a div with id='message' on the page.
     function write(message) {
