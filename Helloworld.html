@@ -16,11 +16,9 @@
 </body>
 <script type="text/javascript">
 $(function() {
-    var text = $('#text').html();
-    console.log(text);
+
     $('#get_text').on('click', function() {
-        console.log('hello');
-        $('#holder').html(text);
+        write("Text");
     });
 
     Office.context.document.getSelectedDataAsync(Office.CoercionType.Text, function(asyncResult) {
