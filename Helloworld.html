@@ -18,16 +18,16 @@
 $(function() {
 
     $('#get_text').on('click', function() {
-        write("Text");
+        Office.context.document.getSelectedDataAsync(Office.CoercionType.Text, function(asyncResult) {
+            if (asyncResult.status == Office.AsyncResultStatus.Failed) {
+                write('Action failed. Error: ' + asyncResult.error.message);
+            } else {
+                write('Selected data: ' + asyncResult.value);
+            }
+        });
     });
 
-    Office.context.document.getSelectedDataAsync(Office.CoercionType.Text, function(asyncResult) {
-        if (asyncResult.status == Office.AsyncResultStatus.Failed) {
-            write('Action failed. Error: ' + asyncResult.error.message);
-        } else {
-            write('Selected data: ' + asyncResult.value);
-        }
-    });
+
 
     // Function that writes to a div with id='message' on the page.
     function write(message) {
