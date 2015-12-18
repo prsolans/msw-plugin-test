@@ -16,14 +16,21 @@
     <h2 id="message">...</h2>
 </body>
 <script type="text/javascript">
-$(function() {
+(function() {
+    "use strict";
 
-    $('#get_text').on('click', function() {
-        console.log('1');
-        getText();
-        console.log('3');
-    });
+    // The initialize function is run each time the page is loaded.
+    Office.initialize = function(reason) {
+        $(document).ready(function() {
 
+            $('#get_text').on('click', function() {
+                console.log('1');
+                getText();
+                console.log('3');
+            });
+
+        });
+    };
 
     function getText() {
         console.log('2');
