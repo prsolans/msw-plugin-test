@@ -22,38 +22,45 @@
     // The initialize function is run each time the page is loaded.
     Office.initialize = function(reason) {
         $(document).ready(function() {
+            app.get_Document(Office.context.document);
 
-            $('#get_text').on('click', function() {
-                console.log('1');
-                getText();
-                console.log('3');
-            });
+
 
         });
     };
 
-    function getText() {
-        console.log('2');
-        Office.context.document.getSelectedDataAsync(Office.CoercionType.Text, {
-                valueFormat: "unformatted",
-                filterType: "all"
-            },
-            function(asyncResult) {
-                var error = asyncResult.error;
-                if (asyncResult.status === Office.AsyncResultStatus.Failed) {
-                    write(error.name + ": " + error.message);
-                } else {
-                    // Get selected data.
-                    var dataValue = asyncResult.value;
-                    write('Selected data is ' + dataValue);
-                }
-            });
-    }
+    // Use a self-executing anonymous function to encapsulate the
+    // functionality that the app uses
+    var app = (function() {
+        $('#get_text').on('click', function() {
+            console.log('1');
+            getText();
+            console.log('3');
+        });
 
-    // Function that writes to a div with id='message' on the page.
-    function write(message) {
-        document.getElementById('message').innerText += message;
-    }
+        function getText() {
+            console.log('2');
+            Word.Office.context.document.getSelectedDataAsync(Office.CoercionType.Text, {
+                    valueFormat: "unformatted",
+                    filterType: "all"
+                },
+                function(asyncResult) {
+                    var error = asyncResult.error;
+                    if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+                        write(error.name + ": " + error.message);
+                    } else {
+                        // Get selected data.
+                        var dataValue = asyncResult.value;
+                        write('Selected data is ' + dataValue);
+                    }
+                });
+        }
+
+        // Function that writes to a div with id='message' on the page.
+        function write(message) {
+            document.getElementById('message').innerText += message;
+        }
+    })()
 });
 </script>
 
