@@ -36,6 +36,7 @@ function readContentControl() {
 
             // Create a proxy object for the content controls collection that contains a specific tag.
             var contentControlsWithTag = context.document.contentControls.getByTag('Customer-Address');
+            printData(contentControlsWithTag);
 
             // Queue a command to load the tag property for all of content controls. 
             context.load(contentControlsWithTag, 'tag');
