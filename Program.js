@@ -35,7 +35,7 @@ function readContentControl() {
     Word.run(function(context) {
 
             // Create a proxy object for the content controls collection that contains a specific tag.
-            var contentControlsWithTag = context.document.contentControls.getByTag('Customer-Address');
+            var contentControlsWithTag = context.document.contentControls.getByTag('Address');
             printData(contentControlsWithTag);
 
             // Queue a command to load the tag property for all of content controls. 
@@ -46,7 +46,7 @@ function readContentControl() {
             return context.sync().then(function() {
                 if (contentControlsWithTag.items.length === 0) {
                     console.log('No content control found.');
-                                        printData("no content control found");
+                    printData("no content control found");
 
                 } else {
                     // Queue a command to get the HTML contents of the first content control.
