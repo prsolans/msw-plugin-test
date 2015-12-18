@@ -12,7 +12,7 @@
     <p>Hello World!</p>
     <button id="get_text">Get text</button>
     <h2 id="text">Hey Buddy</h2>
-    <h2 id="holder">...</h2>
+    <h2 id="message">...</h2>
 </body>
 <script type="text/javascript">
 $(function() {
@@ -22,6 +22,19 @@ $(function() {
         console.log('hello');
         $('#holder').html(text);
     });
+
+    Office.context.document.getSelectedDataAsync(Office.CoercionType.Text, function(asyncResult) {
+        if (asyncResult.status == Office.AsyncResultStatus.Failed) {
+            write('Action failed. Error: ' + asyncResult.error.message);
+        } else {
+            write('Selected data: ' + asyncResult.value);
+        }
+    });
+
+    // Function that writes to a div with id='message' on the page.
+    function write(message) {
+        document.getElementById('message').innerText += message;
+    }
 });
 </script>
 
