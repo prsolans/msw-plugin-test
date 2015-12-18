@@ -6,29 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <link rel="stylesheet" type="text/css" href="program.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script type="javascript">
-            		console.log('hello');
-
-    	$(document).ready(function(){
-			var text = $('#text').html();
-			console.log(text);
-        	$('#get_text').on('click', function(){
-        		console.log('hello');
-        		        	$('#holder').html(text);
-
-        	});
-    	});
-      
-    </script>
 </head>
 
 <body>
     <p>Hello World!</p>
     <button id="get_text">Get text</button>
-
     <h2 id="text">Hey Buddy</h2>
-
     <h2 id="holder">...</h2>
 </body>
+<script type="text/javascript">
+$(function() {
+    var text = $('#text').html();
+    console.log(text);
+    $('#get_text').on('click', function() {
+        console.log('hello');
+        $('#holder').html(text);
+    });
+});
+</script>
 
 </html>
