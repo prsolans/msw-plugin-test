@@ -34,7 +34,7 @@ function printData(data) {
 
         for (var x = 0; x < data.length; x++) {
             for (var y = 0; y < data[x].length; y++) {
-                printOut += data[x][y] + ",";
+                printOut += data[x][y];
             }
         }
         document.getElementById("results").innerText = printOut;
