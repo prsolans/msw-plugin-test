@@ -19,7 +19,7 @@ function readData() {
     });
 }
 
-function printData(data) {
+function printData(data, displayLocation) {
     {
         var printOut = "";
 
@@ -28,14 +28,14 @@ function printData(data) {
                 printOut += data[x][y];
             }
         }
-        document.getElementById("results").innerText = printOut;
+        document.getElementById(displayLocation).innerText = printOut;
     }
 }
 
 function compareContent(displayLocation) {
 
     var result = false;
-    readContentControl("Address", "results");
+
     readContentControl("Address", "control-results");
 
     var initialValue = document.getElementById("results").innerText;
