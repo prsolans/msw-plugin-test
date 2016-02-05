@@ -49,7 +49,7 @@ function readContentControl(tag, displayLocation) {
             // and return a promise to indicate task completion.
             return context.sync().then(function() {
                 if (contentControlsWithTag.items.length === 0) {
-                    printOut = "There isn't a content control with a tag of " + thisTag + " in this document.";
+                    printOut = "There isn't a content control with a tag of " + tag + " in this document.";
                     document.getElementById("control-results").innerText = printOut;
                 } else {
                     printOut = contentControlsWithTag.items[0].text;
