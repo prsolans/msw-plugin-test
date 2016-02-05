@@ -9,7 +9,7 @@ Office.initialize = function(reason) {
     });
 }
 
-function ReadData() {
+function readData() {
     Office.context.document.getSelectedDataAsync(Office.CoercionType.Text, function(result) {
         if (result.status === "succeeded") {
             printData(result.value);
@@ -35,10 +35,15 @@ function printData(data) {
 function compareContent(displayLocation) {
 
     var result = false;
+    readContentControl("Address", "results");
+    readContentControl("Address", "control-results");
+
     var initialValue = document.getElementById("results").innerText;
     var currentValue = document.getElementById("control-results").innerText;
 
-    if(initialValue === currentValue){ result = true; }
+    if (initialValue === currentValue) {
+        result = true;
+    }
     document.getElementById(displayLocation).innerText = result;
 }
 
