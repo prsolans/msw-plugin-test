@@ -45,8 +45,10 @@ function readContentControl() {
             return context.sync().then(function() {
                 if (contentControlsWithTag.items.length === 0) {
                     console.log("There isn't a content control with a tag of Customer-Address in this document.");
+                    document.getElementById("controls-results").innerText = "There isn't a content control with a tag of Customer-Address in this document.";
                 } else {
                     console.log('The first content control with the tag of Customer-Address has this text: ' + contentControlsWithTag.items[0].text);
+                    document.getElementById("controls-results").innerText = "The first content control with the tag of Customer-Address has this text: ' + contentControlsWithTag.items[0].text)";
                 }
 
             });
