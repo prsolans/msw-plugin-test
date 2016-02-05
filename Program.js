@@ -45,8 +45,38 @@ function compareContent(displayLocation) {
     if (initialValue === currentValue) {
         result = true;
     }
+    else {
+
+    }
     
     document.getElementById(displayLocation).innerText = result;
+}
+
+function highlightContentControl(tag){
+     // Run a batch operation against the Word object model.
+    Word.run(function(context) {
+
+            // Create a proxy object for the content controls collection that contains a specific tag.
+            var contentControlsWithTag = context.document.contentControls.getByTag(tag);
+
+            // Synchronize the document state by executing the queued commands, 
+            // and return a promise to indicate task completion.
+            return context.sync().then(function() {
+                if (contentControlsWithTag.items.length === 0) {
+                    document.getElementById(displayLocation).innerText = printOut;
+                } else {
+                    printOut = contentControlsWithTag.items[0].text;
+                    document.getElementById(displayLocation).innerText = printOut;
+                    contentControlsWithTag.items[0].color = "red";
+                }
+            });
+        })
+        .catch(function(error) {
+            document.getElementById(displayLocation).innerText = 'Error: ' + JSON.stringify(error);
+            if (error instanceof OfficeExtension.Error) {
+                document.getElementById(displayLocation).innerText = 'Debug info: ' + JSON.stringify(error.debugInfo);
+            }
+        });
 }
 
 function readContentControl(tag, displayLocation) {
@@ -71,7 +101,6 @@ function readContentControl(tag, displayLocation) {
                 } else {
                     printOut = contentControlsWithTag.items[0].text;
                     document.getElementById(displayLocation).innerText = printOut;
-                    contentControlsWithTag.items[0].color = "red";
                 }
             });
         })
