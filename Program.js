@@ -50,17 +50,17 @@ function readContentControl(tag, displayLocation) {
             return context.sync().then(function() {
                 if (contentControlsWithTag.items.length === 0) {
                     printOut = "There isn't a content control with a tag of " + tag + " in this document.";
-                    document.getElementById("control-results").innerText = printOut;
+                    document.getElementById(displayLocation).innerText = printOut;
                 } else {
                     printOut = contentControlsWithTag.items[0].text;
-                    document.getElementById("results").innerText = printOut;
+                    document.getElementById(displayLocation).innerText = printOut;
                 }
             });
         })
         .catch(function(error) {
-            document.getElementById("control-results").innerText = 'Error: ' + JSON.stringify(error);
+            document.getElementById(displayLocation).innerText = 'Error: ' + JSON.stringify(error);
             if (error instanceof OfficeExtension.Error) {
-                document.getElementById("control-results").innerText = 'Debug info: ' + JSON.stringify(error.debugInfo);
+                document.getElementById(displayLocation).innerText = 'Debug info: ' + JSON.stringify(error.debugInfo);
             }
         });
 
