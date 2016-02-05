@@ -50,12 +50,11 @@ function readContentControl(tag, displayLocation) {
             return context.sync().then(function() {
                 if (contentControlsWithTag.items.length === 0) {
                     printOut = "There isn't a content control with a tag of " + thisTag + " in this document.";
-                    document.getElementById("\""+displayLocation+"\"").innerText = printOut;
+                    document.getElementById("control-results").innerText = printOut;
                 } else {
                     printOut = contentControlsWithTag.items[0].text;
-                    document.getElementById("\""+displayLocation+"\"").innerText = printOut;
+                    document.getElementById("results").innerText = printOut;
                 }
-
             });
         })
         .catch(function(error) {
