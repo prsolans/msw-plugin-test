@@ -32,6 +32,16 @@ function printData(data) {
     }
 }
 
+function compareContent(displayLocation) {
+
+    var result = false;
+    var initialValue = document.getElementById("results").innerText;
+    var currentValue = document.getElementById("control-results").innerText;
+
+    if(initialValue === currentValue){ result = true; }
+    document.getElementById(displayLocation).innerText = result;
+}
+
 function readContentControl(tag, displayLocation) {
 
     var printOut = "";
