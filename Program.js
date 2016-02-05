@@ -4,7 +4,7 @@ Office.initialize = function(reason) {
     $(document).ready(function() {
         // After the DOM is loaded, app-specific code can run.
         // Add any initialization logic to this function.
-        var initialAddress = readContentControl("Address");
+        var initialAddress = readContentControl("Address", "results");
         document.getElementById("results").innerText = initialAddress;
     });
 }
@@ -32,7 +32,7 @@ function printData(data) {
     }
 }
 
-function readContentControl(tag) {
+function readContentControl(tag, displayLocation) {
 
     var printOut = "";
 
@@ -50,10 +50,10 @@ function readContentControl(tag) {
             return context.sync().then(function() {
                 if (contentControlsWithTag.items.length === 0) {
                     printOut = "There isn't a content control with a tag of " + thisTag + " in this document.";
-                    document.getElementById("control-results").innerText = printOut;
+                    document.getElementById(displayLocation).innerText = printOut;
                 } else {
                     printOut = contentControlsWithTag.items[0].text;
-                    document.getElementById("control-results").innerText = printOut;
+                    document.getElementById(displayLocation).innerText = printOut;
                 }
 
             });
