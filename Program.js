@@ -34,18 +34,18 @@ function printData(data, displayLocation) {
 
 function compareContent(displayLocation) {
 
-    var result = false;
-
-    var initialValue = document.getElementById("results").innerText;
-    if (document.getElementById("control-results") != "") {
-        readContentControl("Address", "control-results");
-    }
     var currentValue = document.getElementById("control-results").innerText;
-
+    if (currentValue == "") {
+        readContentControl("Address", "control-results");
+        currentValue = document.getElementById("control-results").innerText;
+    }
+    var result = false;
+    var initialValue = document.getElementById("results").innerText;
+    
     if (initialValue === currentValue) {
         result = true;
     }
-    
+
     document.getElementById(displayLocation).innerText = result;
 }
 
