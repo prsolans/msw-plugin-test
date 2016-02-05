@@ -35,14 +35,17 @@ function printData(data, displayLocation) {
 function compareContent(displayLocation) {
 
     var result = false;
-    readContentControl("Address", "control-results");
 
     var initialValue = document.getElementById("results").innerText;
+    if (document.getElementById("control-results") != "") {
+        readContentControl("Address", "control-results");
+    }
     var currentValue = document.getElementById("control-results").innerText;
 
     if (initialValue === currentValue) {
         result = true;
     }
+    
     document.getElementById(displayLocation).innerText = result;
 }
 
