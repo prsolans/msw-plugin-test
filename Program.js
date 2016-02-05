@@ -36,8 +36,9 @@ function readContentControl() {
 
             var printOut = "";
 
+            var thisTag = "Address";l
             // Create a proxy object for the content controls collection that contains a specific tag.
-            var contentControlsWithTag = context.document.contentControls.getByTag('Address');
+            var contentControlsWithTag = context.document.contentControls.getByTag(thisTag);
 
             // Queue a command to load the text property for all of content controls with a specific tag. 
             context.load(contentControlsWithTag, 'text');
@@ -46,10 +47,10 @@ function readContentControl() {
             // and return a promise to indicate task completion.
             return context.sync().then(function() {
                 if (contentControlsWithTag.items.length === 0) {
-                    printOut = "There isn't a content control with a tag of Customer-Address in this document.");
+                    printOut = "There isn't a content control with a tag of "+thisTag+" in this document.");
                     document.getElementById("control-results").innerText = printOut;
                 } else {
-                    printOut = "The first content control with the tag of Customer-Address has this text: " + contentControlsWithTag.items[0].text);
+                    printOut = "The first content control with the tag of "+thisTag+" has this text: " + contentControlsWithTag.items[0].text);
                     document.getElementById("control-results").innerText = printOut;
                 }
 
