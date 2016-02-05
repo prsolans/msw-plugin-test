@@ -46,7 +46,7 @@ function compareContent(displayLocation) {
         result = true;
     }
     else {
-
+        highlightContentControl("Address");
     }
     
     document.getElementById(displayLocation).innerText = result;
