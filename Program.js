@@ -36,7 +36,7 @@ function readContentControl() {
 
             var printOut = "";
 
-            var thisTag = "Address";l
+            var thisTag = "Address";
             // Create a proxy object for the content controls collection that contains a specific tag.
             var contentControlsWithTag = context.document.contentControls.getByTag(thisTag);
 
