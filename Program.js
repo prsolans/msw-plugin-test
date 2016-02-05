@@ -48,7 +48,7 @@ function readContentControl() {
                     document.getElementById("controls-results").innerText = "There isn't a content control with a tag of Customer-Address in this document.";
                 } else {
                     console.log('The first content control with the tag of Customer-Address has this text: ' + contentControlsWithTag.items[0].text);
-                    document.getElementById("controls-results").innerText = "The first content control with the tag of Customer-Address has this text: ' + contentControlsWithTag.items[0].text)";
+                    document.getElementById("controls-results").innerText = "The first content control with the tag of Customer-Address has this text: " + contentControlsWithTag.items[0].text;
                 }
 
             });
