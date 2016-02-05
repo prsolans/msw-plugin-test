@@ -54,9 +54,9 @@ function readContentControl() {
             });
         })
         .catch(function(error) {
-            console.log('Error: ' + JSON.stringify(error));
+            document.getElementById("controls-results").innerText = 'Error: ' + JSON.stringify(error);
             if (error instanceof OfficeExtension.Error) {
-                console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+                document.getElementById("controls-results").innerText = 'Debug info: ' + JSON.stringify(error.debugInfo);
             }
         });
 
