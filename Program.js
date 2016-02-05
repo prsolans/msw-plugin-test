@@ -71,6 +71,7 @@ function readContentControl(tag, displayLocation) {
                 } else {
                     printOut = contentControlsWithTag.items[0].text;
                     document.getElementById(displayLocation).innerText = printOut;
+                    contentControlsWithTag.items[0].style = "color: red";
                 }
             });
         })
