@@ -4,6 +4,8 @@ Office.initialize = function(reason) {
     $(document).ready(function() {
         // After the DOM is loaded, app-specific code can run.
         // Add any initialization logic to this function.
+        var initialAddress = readContentControl("Address");
+        document.getElementById("results").innerText = initialAddress;
     });
 }
 
@@ -30,17 +32,15 @@ function printData(data) {
     }
 }
 
-function readContentControl() {
+function readContentControl(tag) {
 
     var printOut = "";
 
     // Run a batch operation against the Word object model.
     Word.run(function(context) {
 
-
-            var thisTag = "Address";
             // Create a proxy object for the content controls collection that contains a specific tag.
-            var contentControlsWithTag = context.document.contentControls.getByTag(thisTag);
+            var contentControlsWithTag = context.document.contentControls.getByTag(tag);
 
             // Queue a command to load the text property for all of content controls with a specific tag. 
             context.load(contentControlsWithTag, 'text');
@@ -52,7 +52,7 @@ function readContentControl() {
                     printOut = "There isn't a content control with a tag of " + thisTag + " in this document.";
                     document.getElementById("control-results").innerText = printOut;
                 } else {
-                    printOut = "The first content control with the tag of " + thisTag + " has this text: " + contentControlsWithTag.items[0].text;
+                    printOut = contentControlsWithTag.items[0].text;
                     document.getElementById("control-results").innerText = printOut;
                 }
 
