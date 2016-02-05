@@ -31,36 +31,38 @@ function printData(data) {
 }
 
 function readContentControl() {
+
+    var printOut = "";
+
     // Run a batch operation against the Word object model.
     Word.run(function(context) {
 
-            var printOut = "";
 
-            var thisTag = "Address";
-            // Create a proxy object for the content controls collection that contains a specific tag.
-            var contentControlsWithTag = context.document.contentControls.getByTag(thisTag);
+        var thisTag = "Address";
+        // Create a proxy object for the content controls collection that contains a specific tag.
+        var contentControlsWithTag = context.document.contentControls.getByTag(thisTag);
 
-            // Queue a command to load the text property for all of content controls with a specific tag. 
-            context.load(contentControlsWithTag, 'text');
+        // Queue a command to load the text property for all of content controls with a specific tag. 
+        context.load(contentControlsWithTag, 'text');
 
-            // Synchronize the document state by executing the queued commands, 
-            // and return a promise to indicate task completion.
-            return context.sync().then(function() {
+        // Synchronize the document state by executing the queued commands, 
+        // and return a promise to indicate task completion.
+        return context.sync().then(function() {
                 if (contentControlsWithTag.items.length === 0) {
-                    printOut = "There isn't a content control with a tag of "+thisTag+" in this document.");
-                    document.getElementById("control-results").innerText = printOut;
-                } else {
-                    printOut = "The first content control with the tag of "+thisTag+" has this text: " + contentControlsWithTag.items[0].text);
-                    document.getElementById("control-results").innerText = printOut;
-                }
+                    printOut = "There isn't a content control with a tag of " + thisTag + " in this document.");
+                document.getElementById("control-results").innerText = printOut;
+            } else {
+                printOut = "The first content control with the tag of " + thisTag + " has this text: " + contentControlsWithTag.items[0].text); document.getElementById("control-results").innerText = printOut;
+                document.getElementById("control-results").innerText = printOut;
+      }
 
-            });
-        })
-        .catch(function(error) {
-            document.getElementById("control-results").innerText = 'Error: ' + JSON.stringify(error);
-            if (error instanceof OfficeExtension.Error) {
-                document.getElementById("control-results").innerText = 'Debug info: ' + JSON.stringify(error.debugInfo);
-            }
-        });
+    });
+})
+.catch(function(error) {
+    document.getElementById("control-results").innerText = 'Error: ' + JSON.stringify(error);
+    if (error instanceof OfficeExtension.Error) {
+        document.getElementById("control-results").innerText = 'Debug info: ' + JSON.stringify(error.debugInfo);
+    }
+});
 
 }
