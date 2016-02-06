@@ -6,8 +6,8 @@
   <Version>1.0</Version>
   <ProviderName>Microsoft</ProviderName>
   <DefaultLocale>EN-US</DefaultLocale>
-  <DisplayName DefaultValue="Test application"/>
-  <Description DefaultValue="Reading in text from Word doc"/>
+  <DisplayName DefaultValue="Reconciler"/>
+  <Description DefaultValue="Identify changes to content controls"/>
   <IconUrl DefaultValue=
     "http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg"/>
 
