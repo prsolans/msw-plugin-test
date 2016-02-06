@@ -52,7 +52,7 @@ function compareContent(contentControl, displayLocation) {
         document.getElementById(displayLocation).style.backgroundColor = "red";
     }
     document.getElementById(displayLocation).style.color = "white";
-    document.getElementById(displayLocation).innerText = result;
+    document.getElementById("cc-"+contentControl+"-changed").innerText = result;
 }
 
 function highlightContentControl(tag) {
