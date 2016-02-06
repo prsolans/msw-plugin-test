@@ -37,10 +37,10 @@ function compareContent(contentControl, displayLocation) {
     var result = "changed";
 
     var initialValue = document.getElementById("results").innerText;
-    if (document.getElementById("control-results") == null) {
-        readContentControl(contentControl, "control-results");
+    if (document.getElementById(displayLocation) == null) {
+        readContentControl(contentControl, displayLocation);
     }
-    var currentValue = document.getElementById("control-results").innerText;
+    var currentValue = document.getElementById(displayLocation).innerText;
 
     if (initialValue === currentValue) {
         result = "unchanged";
