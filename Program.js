@@ -4,8 +4,10 @@ Office.initialize = function(reason) {
     $(document).ready(function() {
         // After the DOM is loaded, app-specific code can run.
         // Add any initialization logic to this function.
-        var initialAddress = readContentControl("Address", "results");
-        document.getElementById("results").innerText = initialAddress;
+        var initialAddress = readContentControl("ClauseA", "cc-curr-clauseA");
+        document.getElementById("cc-curr-clauseA").innerText = initialAddress;
+        var clauseB = readContentControl("ClauseB", "cc-curr-clauseA");
+        document.getElementById("cc-curr-clauseB").innerText = clauseB;
     });
 }
 
@@ -36,9 +38,9 @@ function compareContent(contentControl, displayLocation) {
 
     var result = "changed";
 
-    var initialValue = document.getElementById("cc-orig-"+contentControl).innerText;
+    var initialValue = document.getElementById("cc-orig-" + contentControl).innerText;
     if (document.getElementById(displayLocation) == null) {
-        readContentControl("cc-curr-"+contentControl, displayLocation);
+        readContentControl("cc-curr-" + contentControl, displayLocation);
     }
     var currentValue = document.getElementById(displayLocation).innerText;
 
@@ -63,8 +65,7 @@ function highlightContentControl(tag) {
             // Synchronize the document state by executing the queued commands, 
             // and return a promise to indicate task completion.
             return context.sync().then(function() {
-                if (contentControlsWithTag.items.length === 0) {                    
-                } else {
+                if (contentControlsWithTag.items.length === 0) {} else {
                     contentControlsWithTag.items[0].style.color = "red";
                 }
             });
@@ -98,7 +99,7 @@ function readContentControl(tag, displayLocation) {
                     document.getElementById(displayLocation).innerText = printOut;
                 } else {
                     printOut = contentControlsWithTag.items[0].text;
-                    document.getElementById("cc-"+tag).innerText = tag;
+                    document.getElementById("cc-" + tag).innerText = tag;
                     document.getElementById(displayLocation).innerText = printOut;
                 }
             });
