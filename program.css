@@ -23,5 +23,6 @@ div.card
 }
 div.card.hidden
 {
+	display: none;
 	font-size: .5em;
 }
