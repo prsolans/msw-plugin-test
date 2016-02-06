@@ -50,6 +50,8 @@ function compareContent(displayLocation) {
     }
     
     document.getElementById(displayLocation).innerText = result;
+    document.getElementById(displayLocation).style.backgroundColor = "red";
+    document.getElementById(displayLocation).style.color = "white";
 }
 
 function highlightContentControl(tag){
