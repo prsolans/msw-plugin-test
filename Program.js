@@ -64,11 +64,9 @@ function highlightContentControl(tag) {
             // and return a promise to indicate task completion.
             return context.sync().then(function() {
                 if (contentControlsWithTag.items.length === 0) {
-                    document.getElementById(displayLocation).innerText = printOut;
+                    
                 } else {
-                    printOut = contentControlsWithTag.items[0].text;
-                    document.getElementById(displayLocation).innerText = printOut;
-                    contentControlsWithTag.items[0].color = "red";
+                    contentControlsWithTag.items[0].style.color = "red";
                 }
             });
         })
