@@ -39,7 +39,7 @@ function compareContent(contentControl, displayLocation) {
     var result = "changed";
 
     var initialValue = document.getElementById("cc-orig-" + contentControl).innerText;
-    if (document.getElementById(displayLocation) == null) {
+    if (document.getElementById("cc-curr" + contentControl) == null) {
         readContentControl("cc-curr-" + contentControl, displayLocation);
     }
     var currentValue = document.getElementById(displayLocation).innerText;
