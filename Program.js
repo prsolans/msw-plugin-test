@@ -32,13 +32,13 @@ function printData(data, displayLocation) {
     }
 }
 
-function compareContent(displayLocation) {
+function compareContent(tag, displayLocation) {
 
     var result = "changed";
 
     var initialValue = document.getElementById("results").innerText;
     if (document.getElementById("control-results") == null) {
-        readContentControl("Address", "control-results");
+        readContentControl(tag, "control-results");
     }
     var currentValue = document.getElementById("control-results").innerText;
 
@@ -46,7 +46,7 @@ function compareContent(displayLocation) {
         result = "unchanged";
         document.getElementById(displayLocation).style.backgroundColor = "green";
     } else {
-        highlightContentControl("Address");
+        highlightContentControl(tag);
         document.getElementById(displayLocation).style.backgroundColor = "red";
     }
     document.getElementById(displayLocation).style.color = "white";

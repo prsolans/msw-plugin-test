@@ -12,14 +12,14 @@
 
 <body>
     <button onclick="readContentControl('Address', 'control-results')"> Update </button>
-    <button onclick="compareContent('is-changed')"> Compare </button>
-    <button onclick="highlightContentControl('Address')"> Highlight Content </button>
+    <button onclick="compareContent('Address', 'is-changed')"> Compare "Address" tag </button>
+    <!-- <button onclick="highlightContentControl('Address')"> Highlight Content </button> -->
     <hr> 
     <div class="card hidden" id="results"></div>
     <div class="card hidden" id="control-results"></div>
     <div class="card">
         <h5 id="cc-Address"></h5>
-        <div id="is-changed"></div>
+        <div class="card-content" id="is-changed"></div>
     </div>
 </body>
 

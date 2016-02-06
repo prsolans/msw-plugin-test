@@ -19,6 +19,8 @@ h5
 div.card
 {
 	border: 1px solid #999;
+}
+div.card card-content {
 	padding: 7px;
 }
 div.card.hidden
