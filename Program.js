@@ -99,6 +99,7 @@ function readContentControl(tag, displayLocation) {
                     document.getElementById(displayLocation).innerText = printOut;
                 } else {
                     printOut = contentControlsWithTag.items[0].text;
+                    document.getElementById("cc-"+tag).innerText = tag;
                     document.getElementById(displayLocation).innerText = printOut;
                 }
             });
