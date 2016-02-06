@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-        <link rel="stylesheet" type="text/css" href="program.css" />
-        <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js"></script>
-        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script src="Program.js"></script>
-    </head>
-    <body>
-        <button onclick="readContentControl('Address', 'control-results')"> Update </button>
-        <button onclick="compareContent('is-changed')"> Compare </button>
-        <button onclick="highlightContentControl('Address')"> Highlight Content </button><hr>
-        Original: <div class="card hidden" id="results"></div>
-        Current: <div class="card hidden" id="control-results"></div>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="stylesheet" type="text/css" href="program.css" />
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="Program.js"></script>
+</head>
+
+<body>
+    <button onclick="readContentControl('Address', 'control-results')"> Update </button>
+    <button onclick="compareContent('is-changed')"> Compare </button>
+    <button onclick="highlightContentControl('Address')"> Highlight Content </button>
+    <hr> Original:
+    <div class="card hidden" id="results"></div>
+    Current:
+    <div class="card hidden" id="control-results"></div>
+    <div class="card" id="is-changed">
         <h5 id="cc-Address"></h5>
-        <div class="card" id="is-changed"></div>
-    </body>
+    </div>
+</body>
+
 </html>`
