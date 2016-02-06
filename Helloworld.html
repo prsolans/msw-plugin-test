@@ -11,12 +11,16 @@
 </head>
 
 <body>
-    <button onclick="readContentControl('Address', 'control-results')"> Update </button>
-    <button onclick="compareContent('Address', 'is-changed')"> Compare "Address" tag </button>
-    <!-- <button onclick="highlightContentControl('Address')"> Highlight Content </button> -->
-    <hr> 
-    <div class="card hidden" id="results"></div>
-    <div class="card hidden" id="control-results"></div>
+    <button onclick="readContentControl('ClauseA', 'cc-orig-clauseA')"> Update </button>
+    <button onclick="compareContent('ClauseA', 'cc-curr-clauseA')"> Compare ClauseA </button>
+    <hr>
+    <button onclick="readContentControl('ClauseB', 'cc-orig-clauseB')"> Update </button>
+    <button onclick="compareContent('ClauseB', 'cc-curr-clauseB')"> Compare ClauseB </button>
+    <hr>
+    <div class="card hidden" id="cc-orig-clauseA"></div>
+    <div class="card hidden" id="cc-curr-clauseA"></div>
+    <div class="card hidden" id="cc-orig-clauseB"></div>
+    <div class="card hidden" id="cc-curr-clauseB"></div>
     <div class="card">
         <h5 id="cc-Address"></h5>
         <div class="card-content" id="is-changed"></div>
