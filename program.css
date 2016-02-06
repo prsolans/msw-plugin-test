@@ -12,13 +12,15 @@ h1,h3,h4,p,a,li
     font-family: "Segoe UI Light","Segoe UI",Tahoma,sans-serif;
     text-decoration-color:#4ec724;
 }
-
+h5
+{
+	margin: 0;
+}
 div.card
 {
 	border: 1px solid #999;
 	padding: 7px;
 }
-
 div.card.hidden
 {
 	font-size: .5em;
