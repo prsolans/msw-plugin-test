@@ -4,10 +4,10 @@ Office.initialize = function(reason) {
     $(document).ready(function() {
         // After the DOM is loaded, app-specific code can run.
         // Add any initialization logic to this function.
-        var initialAddress = readContentControl("ClauseA", "cc-curr-clauseA");
-        document.getElementById("cc-curr-clauseA").innerText = initialAddress;
-        var clauseB = readContentControl("ClauseB", "cc-curr-clauseA");
-        document.getElementById("cc-curr-clauseB").innerText = clauseB;
+        var initialAddress = readContentControl("ClauseA", "cc-orig-ClauseA");
+        document.getElementById("cc-orig-ClauseA").innerText = initialAddress;
+        var clauseB = readContentControl("ClauseB", "cc-orig-ClauseB");
+        document.getElementById("cc-orig-ClauseB").innerText = clauseB;
     });
 }
 
