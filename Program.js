@@ -44,18 +44,17 @@ function compareContent(displayLocation) {
 
     if (initialValue === currentValue) {
         result = true;
-    }
-    else {
+        document.getElementById(displayLocation).style.backgroundColor = "green";
+    } else {
         highlightContentControl("Address");
+        document.getElementById(displayLocation).style.backgroundColor = "red";
     }
-    
-    document.getElementById(displayLocation).innerText = result;
-    document.getElementById(displayLocation).style.backgroundColor = "red";
     document.getElementById(displayLocation).style.color = "white";
+    document.getElementById(displayLocation).innerText = result;
 }
 
-function highlightContentControl(tag){
-     // Run a batch operation against the Word object model.
+function highlightContentControl(tag) {
+    // Run a batch operation against the Word object model.
     Word.run(function(context) {
 
             // Create a proxy object for the content controls collection that contains a specific tag.
