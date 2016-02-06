@@ -37,7 +37,7 @@ function compareContent(displayLocation) {
     var result = false;
 
     var initialValue = document.getElementById("results").innerText;
-    if (document.getElementById("control-results") != "") {
+    if (document.getElementById("control-results") == null) {
         readContentControl("Address", "control-results");
     }
     var currentValue = document.getElementById("control-results").innerText;
