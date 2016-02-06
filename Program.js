@@ -34,7 +34,7 @@ function printData(data, displayLocation) {
 
 function compareContent(displayLocation) {
 
-    var result = false;
+    var result = "changed";
 
     var initialValue = document.getElementById("results").innerText;
     if (document.getElementById("control-results") == null) {
@@ -43,7 +43,7 @@ function compareContent(displayLocation) {
     var currentValue = document.getElementById("control-results").innerText;
 
     if (initialValue === currentValue) {
-        result = true;
+        result = "unchanged";
         document.getElementById(displayLocation).style.backgroundColor = "green";
     } else {
         highlightContentControl("Address");
@@ -63,8 +63,7 @@ function highlightContentControl(tag) {
             // Synchronize the document state by executing the queued commands, 
             // and return a promise to indicate task completion.
             return context.sync().then(function() {
-                if (contentControlsWithTag.items.length === 0) {
-                    
+                if (contentControlsWithTag.items.length === 0) {                    
                 } else {
                     contentControlsWithTag.items[0].style.color = "red";
                 }
