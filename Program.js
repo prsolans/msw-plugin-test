@@ -8,6 +8,8 @@ Office.initialize = function(reason) {
         //document.getElementById("cc-orig-ClauseA").innerText = clauseA;
         var clauseB = readContentControl("ClauseB", "cc-orig-ClauseB");
         //document.getElementById("cc-orig-ClauseB").innerText = clauseB;
+
+        lastModified();
     });
 }
 
@@ -113,7 +115,7 @@ function readContentControl(tag, displayLocation) {
 
 }
 
-function lastModified {
+function lastModified() {
     var x = new Date(document.lastModified);
     document.getElementById("last-modified").innerHTML = x;
 }
