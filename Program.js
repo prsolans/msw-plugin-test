@@ -112,3 +112,8 @@ function readContentControl(tag, displayLocation) {
         });
 
 }
+
+function lastModified {
+    var x = new Date(document.lastModified);
+    document.getElementById("last-modified").innerHTML = x;
+}
