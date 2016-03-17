@@ -118,7 +118,7 @@ function lastModified() {
 }
 
 function reloadIframe() {
-    var clauseValue = document.getElementById('cc-orig-ClauseA').value;
+    var clauseValue = document.getElementById('cc-orig-ClauseA').innerText;
     var reloadUrl = "https://na21.springcm.com/atlas/Forms/SubmitForm.aspx?aid=17205&FormUid=94f60c85-53ec-e511-80c7-ac162d88a264&clauseA=" + clauseValue;
 
 
