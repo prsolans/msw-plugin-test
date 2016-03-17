@@ -5,6 +5,7 @@ Office.initialize = function(reason) {
         // After the DOM is loaded, app-specific code can run.
         // Add any initialization logic to this function.
         readContentControl("//ClauseA", "cc-orig-ClauseA");        
+        readContentControl("//ClauseA", "cc-changed-ClauseA");        
         readContentControl("//OppId", "cc-OppId");        
         lastModified();
     });
@@ -36,6 +37,8 @@ function printData(data, displayLocation) {
 function compareContent(contentControl, displayLocation) {
 
     var result = "changed";
+    //TODO: Dynamic naming (remove slashes)
+    contentControl = "ClauseA";
 
     var initialValue = document.getElementById("cc-orig-" + contentControl).innerText;
     if (document.getElementById(contentControl) == null) {
