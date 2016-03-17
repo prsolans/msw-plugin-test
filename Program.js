@@ -5,7 +5,7 @@ Office.initialize = function(reason) {
         // After the DOM is loaded, app-specific code can run.
         // Add any initialization logic to this function.
         readContentControl("//ClauseA", "cc-orig-ClauseA");        
-        readContentControl("//OppId", "cc-oppId");        
+        readContentControl("//OppId", "cc-OppId");        
         lastModified();
     });
 }
@@ -51,7 +51,7 @@ function compareContent(contentControl, displayLocation) {
         document.getElementById(displayLocation).style.backgroundColor = "red";
     }
     document.getElementById(displayLocation).style.color = "white";
-    document.getElementById("cc-"+contentControl+"-changed").innerText = result;
+    document.getElementById("cc-changed-" + contentControl).innerText = result;
 }
 
 function highlightContentControl(tag) {
@@ -99,7 +99,8 @@ function readContentControl(tag, displayLocation) {
                 } else {
                     printOut = contentControlsWithTag.items[0].text;
                     // TO DO: Dynamic ID 
-                    document.getElementById("cc-ClauseA").innerText = tag;
+                    var idTag = tag.replace('/', '');
+                    document.getElementById("cc-"+idTag).innerText = tag;
                     document.getElementById(displayLocation).innerText = printOut;
                 }
             });
