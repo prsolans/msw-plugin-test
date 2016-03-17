@@ -13,17 +13,18 @@
 <body>
 <h1>CC Reconciler</h1>
     <button onclick="readContentControl('ClauseA', 'cc-curr-ClauseA')"> Update </button>
-    <button onclick="compareContent('ClauseA', 'cc-ClauseA-changed')"> Compare ClauseA </button>
+    <button onclick="compareContent('ClauseA', 'cc-changed-ClauseA')"> Compare ClauseA </button>
     <hr>
  <!--    <button onclick="readContentControl('ClauseB', 'cc-curr-ClauseB')"> Update </button>
     <button onclick="compareContent('ClauseB', 'cc-ClauseB-changed')"> Compare ClauseB </button>
     <hr>
- -->    <div class="card" id="cc-orig-ClauseA"></div>
+ -->            <h5 id="cc-ClauseA">Original</h5>
+<div class="card" id="cc-orig-ClauseA"></div>
     <div class="card hidden" id="cc-curr-ClauseA"></div>
  <!--    <div class="card" id="cc-orig-ClauseB"></div>
     <div class="card hidden" id="cc-curr-ClauseB"></div>
  -->    <div class="card">
-        <h5 id="cc-ClauseA"></h5>
+        <h5 id="cc-ClauseA">Changed</h5>
         <div class="card-content" id="cc-changed-ClauseA"></div>
     </div>
 <!--     <div class="card">
