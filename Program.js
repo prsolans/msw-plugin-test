@@ -38,9 +38,9 @@ function compareContent(contentControl, displayLocation) {
 
     var result = "changed";
     //TODO: Dynamic naming (remove slashes)
-    contentControl = "ClauseA";
+    var elemIdName = "ClauseA";
 
-    var initialValue = document.getElementById("cc-orig-" + contentControl).innerText;
+    var initialValue = document.getElementById("cc-orig-" + elemIdName).innerText;
     if (document.getElementById(contentControl) == null) {
         readContentControl(contentControl, displayLocation);
     }
@@ -54,7 +54,7 @@ function compareContent(contentControl, displayLocation) {
         document.getElementById(displayLocation).style.backgroundColor = "red";
     }
     document.getElementById(displayLocation).style.color = "white";
-    document.getElementById("cc-changed-" + contentControl).innerText = result;
+    document.getElementById("cc-changed-" + elemIdName).innerText = result;
 }
 
 function highlightContentControl(tag) {
