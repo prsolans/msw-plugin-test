@@ -99,8 +99,7 @@ function readContentControl(tag, displayLocation) {
                 } else {
                     printOut = contentControlsWithTag.items[0].text;
                     // TO DO: Dynamic ID 
-                    var idTag = tag.replace('/', '');
-                    document.getElementById("cc-"+idTag).innerText = tag;
+                    document.getElementById("cc-changed-ClauseA").innerText = tag;
                     document.getElementById(displayLocation).innerText = printOut;
                 }
             });
