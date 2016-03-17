@@ -5,8 +5,8 @@ Office.initialize = function(reason) {
         // After the DOM is loaded, app-specific code can run.
         // Add any initialization logic to this function.
         readContentControl("ClauseA", "cc-orig-ClauseA");        
-        // readContentControl("ClauseB", "cc-orig-ClauseB");        
-        // lastModified();
+        readContentControl("ClauseB", "cc-orig-ClauseB");        
+        lastModified();
     });
 }
 
