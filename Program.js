@@ -5,7 +5,7 @@ Office.initialize = function(reason) {
         // After the DOM is loaded, app-specific code can run.
         // Add any initialization logic to this function.
         readContentControl("//ClauseA", "cc-orig-ClauseA");        
-        readContentControl("ClauseB", "cc-orig-ClauseB");        
+        readContentControl("//OppId", "cc-orig-ClauseB");        
         lastModified();
     });
 }
@@ -98,7 +98,8 @@ function readContentControl(tag, displayLocation) {
                     document.getElementById(displayLocation).innerText = printOut;
                 } else {
                     printOut = contentControlsWithTag.items[0].text;
-                    document.getElementById("cc-" + tag).innerText = tag;
+                    // TO DO: Dynamic ID 
+                    document.getElementById("cc-ClauseA").innerText = tag;
                     document.getElementById(displayLocation).innerText = printOut;
                 }
             });
@@ -119,7 +120,8 @@ function lastModified() {
 
 function reloadIframe() {
     var clauseValue = document.getElementById('cc-changed-ClauseA').innerText;
-    var reloadUrl = "https://na21.springcm.com/atlas/Forms/SubmitForm.aspx?aid=17205&FormUid=94f60c85-53ec-e511-80c7-ac162d88a264&clauseA=" + clauseValue;
+    var oppIdValue = document.getElementById('cc-orig-ClauseB').innerText;
+    var reloadUrl = "https://na21.springcm.com/atlas/Forms/SubmitForm.aspx?aid=17205&FormUid=94f60c85-53ec-e511-80c7-ac162d88a264&clauseA=" + clauseValue + "&oppId=" + oppIdValue;
 
 
     document.getElementById('scm-reconciler').src = reloadUrl;
