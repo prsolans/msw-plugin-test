@@ -116,3 +116,7 @@ function lastModified() {
     var x = new Date(document.lastModified);
     document.getElementById("last-modified").innerHTML = x;
 }
+
+function reloadIframe() {
+    document.getElementById('scm-reconciler').src += '';
+}
