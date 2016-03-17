@@ -118,5 +118,11 @@ function lastModified() {
 }
 
 function reloadIframe() {
-    document.getElementById('scm-reconciler').src += '';
+    var clauseValue = document.getElementById('cc-ClauseA').value;
+    var reloadUrl = "https://na21.springcm.com/atlas/Forms/SubmitForm.aspx?aid=17205&FormUid=94f60c85-53ec-e511-80c7-ac162d88a264&clauseA=" + clauseValue;
+
+
+    document.getElementById('scm-reconciler').src = reloadUrl;
+
+    console.log("ReloadURL: " + reloadUrl);
 }
