@@ -11,33 +11,32 @@
 </head>
 
 <body>
-<h1>CC Reconciler</h1>
+    <h1>CC Reconciler</h1>
     <button onclick="readContentControl('ClauseA', 'cc-curr-ClauseA')"> Update </button>
     <button onclick="compareContent('ClauseA', 'cc-changed-ClauseA')"> Compare ClauseA </button>
     <hr>
- <!--    <button onclick="readContentControl('ClauseB', 'cc-curr-ClauseB')"> Update </button>
+    <!--    <button onclick="readContentControl('ClauseB', 'cc-curr-ClauseB')"> Update </button>
     <button onclick="compareContent('ClauseB', 'cc-ClauseB-changed')"> Compare ClauseB </button>
     <hr>
- -->            <h5 id="cc-ClauseA">ClauseA - Original</h5>
-<div class="card" id="cc-orig-ClauseA"></div>
+ -->
+    <h5 id="cc-ClauseA">ClauseA - Original</h5>
+    <div class="card" id="cc-orig-ClauseA"></div>
     <div class="card hidden" id="cc-curr-ClauseA"></div>
- <h5 id="cc-ClauseB">OppId</h5>
-<div class="card" id="cc-orig-ClauseB"></div>
-   <div class="card">
-        <h5 id="cc-ClauseA">Changed</h5>
-        <div class="card-content" id="cc-changed-ClauseA"></div>
-    </div>
-<!--     <div class="card">
+    <h5 id="cc-ClauseA">ClauseA - Changed</h5>
+    <div class="card-content" id="cc-changed-ClauseA"></div>
+    <h5>OppId</h5>
+    <div class="card" id="cc-oppId"></div>
+
+    <!--     <div class="card">
         <h5 id="cc-ClauseB"></h5>
         <div class="card-content" id="cc-ClauseB-changed"></div>
     </div>
- --><!--     <div id="debug">Last Modified: <div id="last-modified"> </div></div>
- --> 
-<hr>
-        <button onclick="reloadIframe()"> Reload iFrame </button>
-
+ -->
+    <!--     <div id="debug">Last Modified: <div id="last-modified"> </div></div>
+ -->
+    <hr>
+    <button onclick="reloadIframe()"> Reload iFrame </button>
     <iframe id="scm-reconciler" width="300" scrolling="no" frameborder="0" src="" style="height: 450px;"></iframe>
-
 </body>
 
 </html>`

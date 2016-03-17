@@ -5,7 +5,7 @@ Office.initialize = function(reason) {
         // After the DOM is loaded, app-specific code can run.
         // Add any initialization logic to this function.
         readContentControl("//ClauseA", "cc-orig-ClauseA");        
-        readContentControl("//OppId", "cc-orig-ClauseB");        
+        readContentControl("//OppId", "cc-oppId");        
         lastModified();
     });
 }
@@ -120,7 +120,7 @@ function lastModified() {
 
 function reloadIframe() {
     var clauseValue = document.getElementById('cc-changed-ClauseA').innerText;
-    var oppIdValue = document.getElementById('cc-orig-ClauseB').innerText;
+    var oppIdValue = document.getElementById('cc-oppId').innerText;
     var reloadUrl = "https://na21.springcm.com/atlas/Forms/SubmitForm.aspx?aid=17205&FormUid=94f60c85-53ec-e511-80c7-ac162d88a264&clauseA=" + clauseValue + "&oppId=" + oppIdValue;
 
 
