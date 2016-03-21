@@ -17,7 +17,7 @@
   </Hosts>
 
   <DefaultSettings>
-    <SourceLocation DefaultValue="http://prs-word-plugin-1.azurewebsites.net/Helloworld.html"/>
+    <SourceLocation DefaultValue="http://prs-word-plugin-1.azurewebsites.net/index.html#xyq"/>
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
 </OfficeApp>
