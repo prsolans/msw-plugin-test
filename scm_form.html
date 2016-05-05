@@ -1,0 +1,69 @@
+<!-- Please do not modify elements with the springcm: tag -->
+<style type="text/css">
+html {
+    width: 270px;
+}
+
+fieldset {
+    border: 0px;
+    padding: 0;
+    margin: 0;
+}
+
+#MainContentArea {
+    padding: 0;
+}
+
+#recaptcha {
+    width: 200px;
+}
+
+.atlasPanelMargin {
+    margin: 0;
+}
+
+.subtitle {
+    float: left;
+}
+</style>
+<fieldset>
+    <legend>
+        <springcm:MetaGroupLabel metadatagroupid="ae7dacf8-5fec-e511-80c7-ac162d88a264" />
+    </legend>
+    <table>
+        <tr>
+            <td>
+                <springcm:MetaFieldLabel metadatafieldid="af7dacf8-5fec-e511-80c7-ac162d88a264" />
+            </td>
+            <td>
+                <springcm:MetaFieldInput metadatafieldid="af7dacf8-5fec-e511-80c7-ac162d88a264" />
+                <!-- Reconciler.ClauseA -->
+            </td>
+        </tr>
+        <tr>
+            <td>OppId</td>
+            <td>
+                <input id="oppId" readonly="true">
+            </td>
+        </tr>
+    </table>
+</fieldset>
+<script>
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+
+jQuery("#__sxform_af7dacf8-5fec-e511-80c7-ac162d88a264_sxform__").attr("value", getUrlParameter("clauseA"));
+jQuery("#oppId").attr("value", getUrlParameter("oppId"));
+</script>
