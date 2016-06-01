@@ -39,10 +39,10 @@ function compareContent(contentControl, displayLocation) {
     var result = "changed";
 
     var elemIdName = removeCCSlashes(contentControl);
-    var isChangedCheckbox = "cc-isChanged-" + elemIdName;
+    //var isChangedCheckbox = "cc-isChanged-" + elemIdName;
 
     //DEBUGGING
-    document.getElementById("debugInfo-ID").innerText = "ID: " + isChangedCheckbox;
+    //document.getElementById("debugInfo-ID").innerText = "ID: " + isChangedCheckbox;
     //END
 
     var initialValue = document.getElementById("cc-orig-" + elemIdName).innerText;
@@ -54,11 +54,11 @@ function compareContent(contentControl, displayLocation) {
     if (initialValue === currentValue) {
         result = "unchanged";
         document.getElementById(displayLocation).style.backgroundColor = "green";
-        document.getElementById(isChangedCheckbox).checked = "false;"
+    //    document.getElementById(isChangedCheckbox).checked = "false;"
     } else {
         highlightContentControl(contentControl);
         document.getElementById(displayLocation).style.backgroundColor = "red";
-        document.getElementById(isChangedCheckbox).checked = "true;"
+      //  document.getElementById(isChangedCheckbox).checked = "true;"
     }
     document.getElementById(displayLocation).style.color = "white";
     document.getElementById("cc-changed-" + elemIdName).innerText = result;
