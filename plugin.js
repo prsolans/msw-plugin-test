@@ -52,9 +52,12 @@ function compareContent(contentControl, displayLocation) {
     if (initialValue === currentValue) {
         result = "unchanged";
         document.getElementById(displayLocation).style.backgroundColor = "green";
+        document.getElementById("cc-checkbox-ClauseA").checked = "false";
     } else {
         highlightContentControl(contentControl);
         document.getElementById(displayLocation).style.backgroundColor = "red";
+                document.getElementById("cc-checkbox-ClauseA").checked = "true";
+
     }
     document.getElementById(displayLocation).style.color = "white";
     document.getElementById("cc-changed-" + elemIdName).innerText = result;
