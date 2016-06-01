@@ -38,7 +38,9 @@ div.card.hidden {
     font-size: .5em;
 }
 
-
+div#iFrameContainer {
+    display: none;
+}
 
 .hidden {
     display: none;

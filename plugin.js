@@ -40,9 +40,8 @@ function printData(data, displayLocation) {
 function compareContent(contentControl, displayLocation) {
 
     var result = "changed";
-    //TODO: Dynamic naming (remove slashes)
-    var elemIdName = removeSlashes(contentControl);
 
+    var elemIdName = removeSlashes(contentControl);
     var initialValue = document.getElementById("cc-orig-" + elemIdName).innerText;
     if (document.getElementById(contentControl) == null) {
         readContentControl(contentControl, displayLocation);
@@ -53,10 +52,12 @@ function compareContent(contentControl, displayLocation) {
         result = "unchanged";
         document.getElementById(displayLocation).style.backgroundColor = "green";
         document.getElementById("cc-checkbox-ClauseA").checked = false;
+        document.getElementById("div#iFrameContainer").style("display: none");
     } else {
         highlightContentControl(contentControl);
         document.getElementById(displayLocation).style.backgroundColor = "red";
         document.getElementById("cc-checkbox-ClauseA").checked = true;
+        document.getElementById("div#iFrameContainer").style("display: block");
     }
     document.getElementById(displayLocation).style.color = "white";
     document.getElementById("cc-changed-" + elemIdName).innerText = result;
@@ -185,14 +186,13 @@ function readAllContentControls() {
         });
 }
 
+function displayHiddenContent(id) {
+
+}
+
 function lastModified() {
     var x = new Date(document.lastModified);
     document.getElementById("last-modified").innerHTML = x;
-}
-
-function removeSlashes(contentControl) {
-    var noSlashes = contentControl.replace("//", "");
-    return noSlashes;
 }
 
 function reloadIframe() {
@@ -200,8 +200,12 @@ function reloadIframe() {
     var oppIdValue = document.getElementById('cc-OppId').innerText;
     var reloadUrl = "https://na21.springcm.com/atlas/Forms/SubmitForm.aspx?aid=17205&FormUid=94f60c85-53ec-e511-80c7-ac162d88a264&clauseA=" + clauseValue + "&oppId=" + oppIdValue;
 
-
     document.getElementById('scm-reconciler').src = reloadUrl;
 
     console.log("ReloadURL: " + reloadUrl);
+}
+
+function removeSlashes(contentControl) {
+    var noSlashes = contentControl.replace("//", "");
+    return noSlashes;
 }
