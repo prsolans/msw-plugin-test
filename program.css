@@ -13,12 +13,19 @@ h4,
 p,
 a,
 li {
-    font-family: "Segoe UI Light", "Segoe UI", Tahoma, sans-serif;
+    font-family: Roboto,Arial,sans-serif;
     text-decoration-color: #4ec724;
 }
 
 h5 {
     margin: 0;
+}
+
+div#header {
+    background-color: #2196f3 !important;
+    color: white;
+    font-size: 12px;
+    padding: 12px;
 }
 
 div.card {
@@ -32,6 +39,8 @@ div.card card-content {
 div.card.hidden {
     font-size: .5em;
 }
+
+
 
 .hidden {
     display: none;
