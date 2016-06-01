@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Published:70EDFC97-B41D-43C5-B751-7C00AD999804-->
+<!--Created:cb85b80c-f585-40ff-8bfc-12ff4d0e34a9-->
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+  <Id>fb08b70f-3363-421b-80bb-393f2a2a3a5d</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>SpringCM</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="SpringCM for Office (UAT)" />
+  <Description DefaultValue="SpringCM for Office allows one to access their SpringCM content from within Office applications and use that content to manipulate their documents." />
+  <IconUrl DefaultValue="https://springcmwordaddinwebapp.azurewebsites.net/Images/favicon-32x32.png" />
+  <HighResolutionIconUrl DefaultValue="https://springcmwordaddinwebapp.azurewebsites.net/Images/favicon-64x64.png" />
+  <AppDomains>
+    <AppDomain>https://loginuat.springcm.com</AppDomain>
+    <AppDomain>https://uatna11.springcm.com</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Workbook" />
+    <Host Name="Document" />
+  </Hosts>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://springcmwordaddinwebapp.azurewebsites.net/" />
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+</OfficeApp>
