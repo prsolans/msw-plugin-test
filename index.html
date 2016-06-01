@@ -11,21 +11,19 @@
 </head>
 
 <body>
-
     <div id="header">
-    <h1>Salesforce.com Reconciliation</h1>
+        <h1>Salesforce.com Reconciliation</h1>
+        <span id="ver">0.1</span>
     </div>
     <p>Prototype reconciliation from MS Word to SFDC via SpringCM</p>
     <button onclick="compareContent('//ClauseA', 'cc-changed-ClauseA')"> Compare ClauseA </button>
     <hr>
-
     <strong class="hidden">Original</strong>
     <div class="card hidden" id="cc-orig-ClauseA"></div>
     <strong>ClauseA</strong>
     <div class="card" id="cc-changed-ClauseA"></div>
     <strong class="hidden">OppId</strong>
     <div class="card hidden" id="cc-OppId"></div>
-
     <hr>
     <button onclick="reloadIframe()"> Update SCM/SFDC </button>
     <iframe id="scm-reconciler" width="300" scrolling="no" frameborder="0" src="" style="height: 450px;"></iframe>
