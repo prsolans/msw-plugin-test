@@ -39,7 +39,7 @@ function compareContent(contentControl, displayLocation) {
     var result = "changed";
     //TODO: Dynamic naming (remove slashes)
     var elemIdName = removeCCSlashes(contentControl);
-    document.getElementById("debugInfo").innerText = "ID: " + elemIdName;
+    document.getElementById("debugInfo-ID").innerText = "ID: " + elemIdName;
 
     var initialValue = document.getElementById("cc-orig-" + elemIdName).innerText;
     if (document.getElementById(contentControl) == null) {
@@ -123,10 +123,10 @@ function lastModified() {
 }
 
 function removeCCSlashes(contentControl) {
-    document.getElementById("debugInfo").innerText = "CC: " + contentControl;
+    document.getElementById("debugInfo-CC").innerText = "CC: " + contentControl;
 
     var noSlashes = str.replace("//", "");
-    document.getElementById("debugInfo").innerText = "NS: " + noSlashes;
+    document.getElementById("debugInfo-NS").innerText = "NS: " + noSlashes;
 
     return noSlashes;
 }
