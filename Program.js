@@ -39,7 +39,7 @@ function compareContent(contentControl, displayLocation) {
     var result = "changed";
 
     var elemIdName = removeCCSlashes(contentControl);
-    var isChangedCheckbox = "cc-isChanged-" + contentControl;
+    var isChangedCheckbox = "cc-isChanged-" + elemIdName;
 
     //DEBUGGING
     document.getElementById("debugInfo-ID").innerText = "ID: " + isChangedCheckbox;
