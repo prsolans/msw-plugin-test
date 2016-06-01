@@ -9,28 +9,20 @@
     <script src="plugin.js"></script>
     <!-- stylesheets -->
     <link rel="stylesheet" type="text/css" href="style.css" />
-  <!--   <link rel="stylesheet" href="https://na21.springcm.com/atlassupport/css/atlas.css?v=37346" />
-    <link rel="stylesheet" href="https://ux.springcm.com/ux/prod/Atlas/css/Atlas.SpringBoard.min.css?v=37346" />
-    <link rel="stylesheet" href="https://na21.springcm.com/atlas/ThemeCss?aid=17205&v=37346_b10cca14-de32-4275-91bf-d4186143f2c1" />
-    <link rel="stylesheet" href="https://ux.springcm.com/ux/prod/Atlas/css/Atlas.BuildIt.min.css?v=37346" /> -->
 </head>
 
 <body>
-
-<!-- <img src="https://go.springcm.com/hs-fs/hub/411038/file-1488874555-svg/Logos/SpringCM_Logos/springcm_rgb-svg.svg?t=1464376850972&width=150" width="150px"/> -->
     <h1>Salesforce.com Reconciliation</h1>
     <p>Prototype reconciliation from MS Word to SFDC via SpringCM</p>
     <!-- <button onclick="readContentControl('//ClauseA', 'cc-curr-ClauseA')"> Update </button> -->
     <button onclick="compareContent('//ClauseA', 'cc-changed-ClauseA')"> Compare ClauseA </button>
     <hr>
-
     <strong class="hidden">ClauseA - Original</strong>
     <div class="card" id="cc-orig-ClauseA" class="hidden"></div>
     <strong>ClauseA - Changed</strong>
     <div class="card" id="cc-changed-ClauseA"></div>
     <strong class="hidden">OppId</strong>
     <div class="card" id="cc-OppId" class="hidden"></div>
-
     <hr>
     <button onclick="reloadIframe()"> Update SCM/SFDC </button>
     <iframe id="scm-reconciler" width="300" scrolling="no" frameborder="0" src="" style="height: 450px;"></iframe>
