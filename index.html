@@ -11,18 +11,20 @@
 </head>
 
 <body>
-    <img src="springcm_rgb-svg.svg" width="150px"/>
     <div id="header">
     <h1>Salesforce.com Reconciliation</h1>
     </div>
     <p>Prototype reconciliation from MS Word to SFDC via SpringCM</p>
-    <button onclick="compareContent('//ClauseA', 'cc-changed-ClauseA')"> Compare ClauseA </button>
+    <button onclick="compareContent('//ClauseA', 'cc-changed-ClauseA')"> Compare Content </button>
     <hr>
+
+    <strong>Content</strong>
+    <div class="card" id="cc-changed-ClauseA"></div>
+    <input type="checkbox" name="isChanged">Did the content change?</input>
+
 
     <strong class="hidden">Original</strong>
     <div class="card hidden" id="cc-orig-ClauseA"></div>
-    <strong>ClauseA</strong>
-    <div class="card" id="cc-changed-ClauseA"></div>
     <strong class="hidden">OppId</strong>
     <div class="card hidden" id="cc-OppId"></div>
 
