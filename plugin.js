@@ -41,7 +41,7 @@ function compareContent(contentControl, displayLocation) {
 
     var result = "changed";
     //TODO: Dynamic naming (remove slashes)
-    var elemIdName = "ClauseA";
+    var elemIdName = removeSlashes(contentControl);
 
     var initialValue = document.getElementById("cc-orig-" + elemIdName).innerText;
     if (document.getElementById(contentControl) == null) {
@@ -186,6 +186,11 @@ function readAllContentControls() {
 function lastModified() {
     var x = new Date(document.lastModified);
     document.getElementById("last-modified").innerHTML = x;
+}
+
+function removeSlashes(contentControl) {
+    var noSlashes = contentControl.replace("//", "");
+    return noSlashes;
 }
 
 function reloadIframe() {
