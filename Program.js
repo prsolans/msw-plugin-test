@@ -4,9 +4,9 @@ Office.initialize = function(reason) {
     $(document).ready(function() {
         // After the DOM is loaded, app-specific code can run.
         // Add any initialization logic to this function.
-        readContentControl("//ClauseA", "cc-orig-ClauseA");        
-        readContentControl("//ClauseA", "cc-changed-ClauseA");        
-        readContentControl("//OppId", "cc-OppId");        
+        readContentControl("//ClauseA", "cc-orig-ClauseA");
+        readContentControl("//ClauseA", "cc-changed-ClauseA");
+        readContentControl("//OppId", "cc-OppId");
         lastModified();
     });
 }
@@ -37,9 +37,13 @@ function printData(data, displayLocation) {
 function compareContent(contentControl, displayLocation) {
 
     var result = "changed";
-    //TODO: Dynamic naming (remove slashes)
+
     var elemIdName = removeCCSlashes(contentControl);
-    document.getElementById("debugInfo-ID").innerText = "ID: " + elemIdName;
+    var isChangedCheckbox = "cc-isChanged-" + contentControl;
+
+    //DEBUGGING
+    document.getElementById("debugInfo-ID").innerText = "ID: " + isChangedCheckbox;
+    //END
 
     var initialValue = document.getElementById("cc-orig-" + elemIdName).innerText;
     if (document.getElementById(contentControl) == null) {
@@ -50,9 +54,11 @@ function compareContent(contentControl, displayLocation) {
     if (initialValue === currentValue) {
         result = "unchanged";
         document.getElementById(displayLocation).style.backgroundColor = "green";
+        document.getElementById(isChangedCheckbox).checked = "false;"
     } else {
         highlightContentControl(contentControl);
         document.getElementById(displayLocation).style.backgroundColor = "red";
+        document.getElementById(isChangedCheckbox).checked = "true;"
     }
     document.getElementById(displayLocation).style.color = "white";
     document.getElementById("cc-changed-" + elemIdName).innerText = result;
