@@ -16,28 +16,24 @@
 </head>
 
 <body>
-    <div>
-        <div class="heading--preview font--xlarge">
-            <img src='https://go.springcm.com/hs-fs/hub/411038/file-1488874555-svg/Logos/SpringCM_Logos/springcm_rgb-svg.svg?t=1464376850972&width=105' width="105px" />
-            <div style="clear: both;">Salesforce.com Reconciliation</div>
-        </div>
-    </div>
-    <div id="contentTab" tab-title="DOCUMENT" class="" split-target="contentPanel" style=" margin: 24px; height: 552px;">
-        <p>Prototype reconciliation from MS Word to SFDC via SpringCM</p>
-        <!-- <button onclick="readContentControl('//ClauseA', 'cc-curr-ClauseA')"> Update </button> -->
-        <button onclick="compareContent('//ClauseA', 'cc-changed-ClauseA')"> Compare ClauseA </button>
-        <hr>
-        <strong>ClauseA - Current Value</strong>
-        <div class="card" id="cc-changed-ClauseA"></div>
-        <hr>
-        <strong class="hidden">ClauseA - Original</strong>
-        <div class="card hidden" id="cc-orig-ClauseA"></div>
-        <strong class="hidden">OppId</strong>
-        <div class="card hidden" id="cc-OppId"></div>
-        <hr>
-        <button onclick="reloadIframe()"> Update SCM/SFDC </button>
-        <iframe id="scm-reconciler" width="300" scrolling="no" frameborder="0" src="" style="height: 450px;"></iframe>
-    </div>
+
+<img src="https://go.springcm.com/hs-fs/hub/411038/file-1488874555-svg/Logos/SpringCM_Logos/springcm_rgb-svg.svg?t=1464376850972&width=150" width="150px"/>
+    <h1>Salesforce.com Reconciliation</h1>
+    <p>Prototype reconciliation from MS Word to SFDC via SpringCM</p>
+    <!-- <button onclick="readContentControl('//ClauseA', 'cc-curr-ClauseA')"> Update </button> -->
+    <button onclick="compareContent('//ClauseA', 'cc-changed-ClauseA')"> Compare ClauseA </button>
+    <hr>
+
+    <strong class="hidden">ClauseA - Original</strong>
+    <div class="card" id="cc-orig-ClauseA" class="hidden"></div>
+    <strong>ClauseA - Changed</strong>
+    <div class="card" id="cc-changed-ClauseA"></div>
+    <strong class="hidden">OppId</strong>
+    <div class="card" id="cc-OppId" class="hidden"></div>
+
+    <hr>
+    <button onclick="reloadIframe()"> Update SCM/SFDC </button>
+    <iframe id="scm-reconciler" width="300" scrolling="no" frameborder="0" src="" style="height: 450px;"></iframe>
 </body>
 
 </html>`
