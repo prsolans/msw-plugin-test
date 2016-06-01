@@ -22,10 +22,8 @@ h5 {
 }
 
 div#header {
-    background-color: #2196f3 !important;
-    color: white;
     font-size: 12px;
-    padding: 12px;
+    padding: 6px 0;
 }
 
 div.card {
