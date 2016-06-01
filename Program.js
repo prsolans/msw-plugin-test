@@ -125,7 +125,7 @@ function lastModified() {
 function removeCCSlashes(contentControl) {
     document.getElementById("debugInfo-CC").innerText = "CC: " + contentControl;
 
-    var noSlashes = str.replace("//", "");
+    var noSlashes = contentControl.replace("//", "");
     document.getElementById("debugInfo-NS").innerText = "NS: " + noSlashes;
 
     return noSlashes;
